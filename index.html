@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Devesh Sharma - Professional Portfolio</title>
+
+  <!-- Tailwind, FontAwesome, Google Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- pdf-lib (for resume download) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="text-gray-700 antialiased">
+
+  <!-- Custom Cursor Elements -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+
+  <!-- Header -->
+  <header id="header" class="sticky top-0 z-50">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-gray-800 tracking-wider">Devesh Sharma</a>
+
+      <div class="hidden md:flex space-x-8">
+        <a href="#about" class="nav-link text-gray-600 hover:text-indigo-600 font-medium transition duration-300">About</a>
+        <a href="#skills" class="nav-link text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Skills</a>
+        <a href="#projects" class="nav-link text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Projects</a>
+        <a href="#resume" class="nav-link text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Resume</a>
+        <a href="#contact" class="nav-link text-gray-600 hover:text-indigo-600 font-medium transition duration-300">Contact</a>
+      </div>
+
+      <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+      </button>
+    </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+      <a href="#about" class="block py-2 text-gray-600 hover:text-indigo-600">About</a>
+      <a href="#skills" class="block py-2 text-gray-600 hover:text-indigo-600">Skills</a>
+      <a href="#projects" class="block py-2 text-gray-600 hover:text-indigo-600">Projects</a>
+      <a href="#resume" class="block py-2 text-gray-600 hover:text-indigo-600">Resume</a>
+      <a href="#contact" class="block py-2 text-gray-600 hover:text-indigo-600">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="relative min-h-[80vh] flex items-center justify-center text-center overflow-hidden">
+      <canvas id="hero-canvas"></canvas>
+      <div class="relative z-10 container mx-auto px-6">
+        <h1 id="hero-title" class="text-5xl md:text-7xl font-bold text-gray-800 mb-4 h-24"></h1>
+        <p id="hero-subtitle" class="mt-4 text-xl md:text-2xl text-indigo-700 font-semibold tracking-wide h-12"></p>
+      </div>
+    </section>
+
+    <!-- About -->
+    <<section id="about" class="py-24">
+  <div class="container mx-auto px-6 reveal" data-delay="0ms">
+    <h2 class="section-title">About Me</h2>
+    <div class="flex flex-col md:flex-row items-center gap-16">
+      <!-- Image -->
+      <div class="md:w-1/3">
+        <div class="relative w-max mx-auto group">
+          <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full blur-xl opacity-60 group-hover:opacity-80 transition duration-500"></div>
+          <img 
+            src="Image/profile.jpeg"   
+            alt="Devesh Sharma" 
+            class="relative rounded-full shadow-2xl mx-auto transform group-hover:scale-105 transition duration-500 max-w-[250px] md:max-w-[400px]">
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="md:w-2/3 text-lg text-center md:text-left">
+        <p class="mb-4">
+          Hello! I'm Devesh Sharma, a passionate Full-Stack Developer & AI/ML Enthusiast with a knack for creating elegant and efficient solutions.
+        </p>
+        <p>
+          I enjoy turning complex problems into simple, beautiful, and intuitive designs. Outside coding I explore new tech, contribute to open-source, and hike.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Skills -->
+    <section id="skills" class="py-24 bg-white/50">
+      <div class="container mx-auto px-6 reveal" data-delay="50ms">
+        <h2 class="section-title">My Skills</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 text-center">
+          <div class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="h-20 w-20 mx-auto mb-2" alt="HTML5"><p class="font-semibold">HTML5</p>
+          </div>
+          <div class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="h-20 w-20 mx-auto mb-2" alt="CSS3"><p class="font-semibold">CSS3</p>
+          </div>
+          <div class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="h-20 w-20 mx-auto mb-2" alt="JavaScript"><p class="font-semibold">JavaScript</p> 
+          </div>
+          <div class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="h-20 w-20 mx-auto mb-2" alt="React"><p class="font-semibold">React</p>
+          </div>
+          <div class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"  class="h-20 w-20 mx-auto mb-2" alt="MongoDB"><p class="font-semibold">MongoDB</p>
+          </div>
+          <div class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"> 
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"  class="h-20 w-20 mx-auto mb-2" alt="Express.js"><p class="font-semibold">Express.js</p>
+          </div>
+          <div class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" 
+       class="h-20 w-20 mx-auto mb-2" alt="Java">
+  <p class="font-semibold">Java</p>
+</div>
+
+<div class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" 
+       class="h-20 w-20 mx-auto mb-2" alt="MySQL">
+  <p class="font-semibold">MySQL</p>
+</div>
+
+<div class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+  <img src="https://cdn-icons-png.flaticon.com/512/4712/4712100.png" 
+       class="h-20 w-20 mx-auto mb-2" alt="AI/ML">
+  <p class="font-semibold">AI / ML</p>
+</div>
+
+<div class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" 
+       class="h-20 w-20 mx-auto mb-2" alt="Python">
+  <p class="font-semibold">Python</p>
+</div>
+
+<div class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" 
+       class="h-20 w-20 mx-auto mb-2" alt="C++">
+  <p class="font-semibold">C++</p>
+</div>
+
+<div class="p-4 bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" 
+       class="h-20 w-20 mx-auto mb-2" alt="SAP MM">
+  <p class="font-semibold">SAP MM</p>
+</div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Certification Section -->
+
+
+    <!-- Certifications -->
+<section id="certifications" class="py-16">
+  <div class="container mx-auto px-6">
+    <h2 class="section-title text-center mb-8">Certifications</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <!-- repeat the "cert-card" 5 times with your image paths -->
+      <div class="cert-card">
+        <div class="cert-inner">
+          <img src="Image/JAVA.png" alt="Cert 1" class="cert-img">
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-inner">
+          <img src="Image/Google Analytics.png" alt="Cert 2" class="cert-img">
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-inner">
+          <img src="Image/DATABASE.png" alt="Cert 3" class="cert-img">
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-inner">
+          <img src="Image/Cprogram.png" alt="Cert 4" class="cert-img">
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-inner">
+          <img src="Image/SAP.png" alt="Cert 5" class="cert-img">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+    <!-- Projects -->
+    <section id="projects" class="py-24 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <h2 class="section-title text-center mb-12">My Projects</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <!-- 6 project cards -->
+          <div class="project-card reveal" data-delay="100ms">
+            <div class="card-content">
+              <img src="https://placehold.co/600x400/a78bfa/ffffff?text=Project+One" alt="Project One" class="w-full h-56 object-cover">
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Microsoft Store Concept</h3>
+                <p class="text-gray-600 mb-4">Redesign with React & Tailwind.</p>
+                <a href="#" class="project-link text-indigo-600 hover:text-indigo-800 font-semibold inline-flex items-center">View Project <span class="arrow ml-2">&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card reveal" data-delay="200ms">
+            <div class="card-content">
+              <img src="https://placehold.co/600x400/7dd3fc/ffffff?text=Project+Two" alt="Project Two" class="w-full h-56 object-cover">
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Task Management App</h3>
+                <p class="text-gray-600 mb-4">Vue.js app with drag-and-drop.</p>
+                <a href="#" class="project-link text-indigo-600 hover:text-indigo-800 font-semibold inline-flex items-center">View Project <span class="arrow ml-2">&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card reveal" data-delay="300ms">
+            <div class="card-content">
+              <img src="https://placehold.co/600x400/fca5a5/ffffff?text=Project+Three" alt="Project Three" class="w-full h-56 object-cover">
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Portfolio Template</h3>
+                <p class="text-gray-600 mb-4">Customizable template with Tailwind.</p>
+                <a href="#" class="project-link text-indigo-600 hover:text-indigo-800 font-semibold inline-flex items-center">View Project <span class="arrow ml-2">&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card reveal" data-delay="400ms">
+            <div class="card-content">
+              <img src="https://placehold.co/600x400/fbbf24/ffffff?text=Project+Four" alt="Project Four" class="w-full h-56 object-cover">
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">E-Commerce Dashboard</h3>
+                <p class="text-gray-600 mb-4">Analytics dashboard built with Next.js.</p>
+                <a href="#" class="project-link text-indigo-600 hover:text-indigo-800 font-semibold inline-flex items-center">View Project <span class="arrow ml-2">&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card reveal" data-delay="500ms">
+            <div class="card-content">
+              <img src="https://placehold.co/600x400/34d399/ffffff?text=Project+Five" alt="Project Five" class="w-full h-56 object-cover">
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">AI Chatbot</h3>
+                <p class="text-gray-600 mb-4">Conversational bot with Node.js + OpenAI.</p>
+                <a href="#" class="project-link text-indigo-600 hover:text-indigo-800 font-semibold inline-flex items-center">View Project <span class="arrow ml-2">&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card reveal" data-delay="600ms">
+            <div class="card-content">
+              <img src="https://placehold.co/600x400/60a5fa/ffffff?text=Project+Six" alt="Project Six" class="w-full h-56 object-cover">
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Blog Platform</h3>
+                <p class="text-gray-600 mb-4">Full-stack MERN blog platform.</p>
+                <a href="#" class="project-link text-indigo-600 hover:text-indigo-800 font-semibold inline-flex items-center">View Project <span class="arrow ml-2">&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume / Timeline -->
+    <section id="resume" class="py-24 bg-white/50">
+      <div class="container mx-auto px-6">
+        <h2 class="section-title reveal text-center mx-auto" data-delay="0ms">
+           MY JOURNEY
+        </h2>
+        <div class="max-w-3xl mx-auto relative">
+          <div class="absolute left-3 md:left-1/2 -ml-0.5 w-1 bg-indigo-200 h-full"></div>
+
+          <div class="timeline-item mb-12">
+            <div class="flex items-center md:justify-normal md:odd:flex-row-reverse group">
+              <div class="flex justify-center items-center w-6 h-6 md:w-10 md:h-10 bg-indigo-600 rounded-full z-10">
+                <i class="fas fa-briefcase text-white"></i>
+              </div>
+              
+              <div class="w-full md:w-5/12 bg-white rounded-lg shadow-xl p-6 ml-6 md:ml-0">
+                <h3 class="font-bold text-gray-800 text-xl">Self Employeed</h3>
+                <p class="text-sm font-medium text-indigo-600">Full-Stack Java Developer</p>
+                <p class="text-sm text-gray-600 mt-2">Present..</p>
+              </div>
+              
+               
+            </div>
+          </div>
+
+         <div class="timeline-item mb-12">
+           <div class="flex items-center md:justify-normal group">
+           <div class="flex justify-center items-center w-6 h-6 md:w-10 md:h-10 bg-indigo-600 rounded-full z-10">
+           <i class="fas fa-briefcase text-white"></i>
+         </div>
+           <div class="w-full md:w-5/12 bg-white rounded-lg shadow-xl p-6 ml-6 md:ml-0">
+           <h3 class="font-bold text-gray-800 text-xl">Web Developer</h3>
+           <p class="text-sm font-medium text-indigo-600">Internship | 15 Sep 2025 to 15 Oct 2025</p>
+           <p class="text-sm text-gray-600 mt-2">Built E-Commerce Website, Online Quiz Maker, Job Board, Gaming Project etc.</p>
+         </div>
+        </div>
+    </div>
+
+          <div class="timeline-item">
+            <div class="flex items-center md:justify-normal md:odd:flex-row-reverse group">
+              <div class="flex justify-center items-center w-6 h-6 md:w-10 md:h-10 bg-indigo-600 rounded-full z-10">
+                <i class="fas fa-graduation-cap text-white"></i>
+              </div>
+              <div class="w-full md:w-5/12 bg-white rounded-lg shadow-xl p-6 ml-6 md:ml-0">
+                <h3 class="font-bold text-gray-800 text-xl">MCA</h3>
+                <p class="text-sm font-medium text-indigo-600">Galgotias University | 2024 - 2026</p>
+                <p class="text-sm text-gray-600 mt-2">Grade : 8.5 CGPA</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-16 reveal" data-delay="50ms">
+          <a href="Resume/Resume -Devesh Sharma (IT).docx" download
+          class="inline-block bg-indigo-600 text-white font-bold py-4 px-10 rounded-full hover:bg-indigo-700 transition duration-300 transform hover:scale-105 shadow-lg">
+          <i class="fas fa-download mr-3"></i> Download My Resume
+          </a>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 bg-gray-900">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-white mb-10">📬 Contact Me</h2>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      
+      <!-- Phone -->
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all transform hover:-translate-y-2">
+        <div class="text-4xl mb-3">📱</div>
+        <h3 class="text-xl font-semibold text-gray-800">Phone</h3>
+        <p class="text-gray-600 mt-2">+91 9625745248</p>
+      </div>
+
+      <!-- Email -->
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all transform hover:-translate-y-2">
+        <div class="text-4xl mb-3">📧</div>
+        <h3 class="text-xl font-semibold text-gray-800">Email</h3>
+        <p class="text-gray-600 mt-2">deveshsharma9958@gmail.com</p>
+      </div>
+
+      <!-- Location -->
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all transform hover:-translate-y-2">
+        <div class="text-4xl mb-3">📍</div>
+        <h3 class="text-xl font-semibold text-gray-800">Location</h3>
+        <p class="text-gray-600 mt-2">East Delhi, India</p>
+      </div>
+
+      <!-- LinkedIn -->
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all transform hover:-translate-y-2">
+        <div class="text-4xl mb-3">💼</div>
+        <h3 class="text-xl font-semibold text-gray-800">LinkedIn</h3>
+        <a href="https://www.linkedin.com/in/devesh-sharma-65b9541bb/" target="_blank" 
+           class="text-blue-600 hover:underline mt-2 block">linkedin.com/in/devesh</a>
+      </div>
+
+      <!-- GitHub -->
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all transform hover:-translate-y-2">
+        <div class="text-4xl mb-3">🐙</div>
+        <h3 class="text-xl font-semibold text-gray-800">GitHub</h3>
+        <a href="https://github.com/deveshsharma96" target="_blank" 
+           class="text-gray-800 hover:underline mt-2 block">github.com/deveshgithub</a>
+      </div>
+
+      <!-- LeetCode -->
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-all transform hover:-translate-y-2">
+       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/leetcode/leetcode-original.svg" 
+       alt="LeetCode" class="h-16 w-16 mx-auto mb-3">
+       <h3 class="text-xl font-semibold text-gray-800">LeetCode</h3>
+       <a href="https://leetcode.com/u/Deveshsharma1/" target="_blank" 
+       class="text-green-600 hover:underline mt-2 block">leetcode.com/devesh</a>
+      </div>
+
+      
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-6 text-center">
+      <div class="flex justify-center space-x-6 mb-4">
+        <a href="https://github.com/deveshsharma96" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-github fa-2x"></i></a>
+        <a href="https://www.linkedin.com/in/devesh-sharma-65b9541bb/" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-linkedin fa-2x"></i></a>
+        <a href="https://www.instagram.com/devesh_sharma_1?igsh=Zmh2MDVubjZoZHNo" target="_blank" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram fa-2x"></i></a>
+      </div>
+      <p>&copy;Designed by Devesh Sharma</p>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <a href="#" id="back-to-top" class="hidden md:inline-flex items-center justify-center w-12 h-12 rounded-full bg-indigo-600 text-white shadow-lg">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
